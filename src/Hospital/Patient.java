@@ -1,21 +1,48 @@
 package Hospital;
 
 public class Patient extends Person {
-        private medicalrecord medicalrecordID;
-        public Patient (){medicalrecordID=0};
+    public static String name;
+    private int medicalrecordID;
+        private String medicalinsurance;
 
-        public medicalrecord getMedicalrecordID {
-            return medicalrecordID;
-        }
+        public Patient(int medicalrecordID) {
+        this.medicalrecordID = medicalrecordID;
+    }
 
-        public void setmedicalrecordID(int medicalrecordID) {
+    public Patient(String name, String lastname, String address, int age, String medicalinsurance) {
+        super(name, lastname, address, age);
+        this.medicalinsurance = medicalinsurance;
+    }
+
+    public int getMedicalrecordID(){
+        return medicalrecordID;
+    }
+
+    public Patient(String s) {
+        this.medicalinsurance = medicalinsurance;
+        this.name = name;
+    }
+
+    public void setmedicalrecordID(int medicalrecordID) {
             this.medicalrecordID = medicalrecordID;
         }
-    }
+
+
+
     @Override
     public String print(){
-        System.out.println("Hola");
+        return medicalinsurance;
+    }
 
-}
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
 }

@@ -1,8 +1,8 @@
 package Hospital;
 
 public abstract class MedicalPractice {
-    private double mpcost
-    private String mpname
+    private double mpcost;
+    private String mpname;
 
     protected MedicalPractice(double mpcost, String mpname) {
         this.mpcost = mpcost;
@@ -23,14 +23,6 @@ public abstract class MedicalPractice {
     public void setMpname(String mpname) {
         this.mpname=mpname;
     }
-    public abstract void calculatempCost(){
-
-       }
-
-
-
-
-    }
-
+    public abstract double showCost();
 
 }
