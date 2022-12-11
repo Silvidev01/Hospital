@@ -1,5 +1,9 @@
 package Interfaces;
 
-public interface Idiagnosis {
+import Hospital.Patient;
+
+public interface Iattend {
+
+    void attendPatient(Patient patient);
 
 }
