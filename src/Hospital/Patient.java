@@ -1,48 +1,54 @@
 package Hospital;
 
+import java.time.LocalDate;
+
+import static java.lang.System.out;
+
 public class Patient extends Person {
-    public static String name;
+//fields
     private int medicalrecordID;
-        private String medicalinsurance;
+    String medicalinsurance;
 
-        public Patient(int medicalrecordID) {
+    //Constructors
+
+    public Patient(){};
+
+     public Patient(String name, String lastname, String address, LocalDate birthDate, int medicalrecordID, String medicalinsurance) {
+        super(name, lastname, address, birthDate);
         this.medicalrecordID = medicalrecordID;
-    }
-
-    public Patient(String name, String lastname, String address, int age, String medicalinsurance) {
-        super(name, lastname, address, age);
         this.medicalinsurance = medicalinsurance;
     }
-
+//getters and setters
     public int getMedicalrecordID(){
         return medicalrecordID;
     }
 
-    public Patient(String s) {
-        this.medicalinsurance = medicalinsurance;
-        this.name = name;
-    }
-
-    public void setmedicalrecordID(int medicalrecordID) {
+      public void setmedicalrecordID(int medicalrecordID) {
             this.medicalrecordID = medicalrecordID;
         }
 
-
-
-    @Override
-    public String print(){
+    public String getMedicalinsurance() {
         return medicalinsurance;
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public void setMedicalinsurance(String medicalinsurance) {
+        this.medicalinsurance = medicalinsurance;
     }
-
+//methods
     @Override
-    public void setName(String name) {
-        this.name = name;
+    public String print(){
+        return getMedicalinsurance();
     }
-
+    @Override
+    public String showperson() {
+        return getName();
+    }
+    public void showpatient() {
+        out.println("The patient  "+ getName() + "has" + getMedicalinsurance() + "medical insurance");
+    }
+    @Override
+    public String toString() {
+        return "Patient information:\n" + "Name:"+ getName() + "\nLast Name:" + getLastname() + "\nDate of Birth:" + getBirthDate();}
 
 }
+

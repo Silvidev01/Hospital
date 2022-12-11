@@ -1,59 +1,55 @@
 package Hospital;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 //this is an abstract class Person//
 abstract class Person {
-
-    private String name;
-    private String lastname;
+//Fields //
+String name;
+    String lastname;
     private String address;
-    private int age;
 
-    public Person() {
-        name = "";
-        lastname = "";
-        address = "";
-        age = 0;
-    }
+    private LocalDate birthDate;
 
+    // constructors
 
-    public Person(String name, String lastname, String address, int age) {
+    public Person() {}
+
+    public Person(String name, String lastname, String address, LocalDate birthDate) {
         this.name = name;
         this.lastname = lastname;
-        this.age = age;
+        this.address = address;
+        this.birthDate = birthDate;
     }
 
+
+//getters and setters//
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getLastname() {
         return lastname;
     }
-
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-
     public String getAddress() {
         return address;
     }
-
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public int getAge() {
-        return age;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     public abstract String print();
@@ -63,13 +59,14 @@ abstract class Person {
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return getAge() == person.getAge() && getName().equals(person.getName()) && getLastname().equals(person.getLastname()) && getAddress().equals(person.getAddress());
+        return Objects.equals(getName(), person.getName()) && getLastname().equals(person.getLastname()) && getAddress().equals(person.getAddress());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getLastname(), getAge());
+        return Objects.hash(getName(), getLastname());
     }
 
+    public abstract String showperson();
 }
 
