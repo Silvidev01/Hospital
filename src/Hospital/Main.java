@@ -12,7 +12,14 @@ public class Main {
 
     public static void main (String [] args){
 
-        EmployeeSave EmployeeSave = new EmployeeSave();
+
+        EmployeeSave EmployeeSave = null;
+        try {
+            EmployeeSave = new EmployeeSave();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+        }
 
 
         //initializing employees
