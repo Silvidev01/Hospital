@@ -40,12 +40,17 @@ public class Patient extends Person {
         return getMedicalinsurance();
     }
     @Override
-    public String showperson() {
+    public String showPerson() {
         return getName();
     }
-    public void showpatient() {
+    public void showPatientMeIn() {
         out.println("The patient  "+ getName() + "has" + getMedicalinsurance() + "medical insurance");
     }
+    public String getPatient(){
+        String fullname = name + "  " + lastname;
+        return fullname;
+    }
+
     @Override
     public String toString() {
         return "Patient information:\n" + "Name:"+ getName() + "\nLast Name:" + getLastname() + "\nDate of Birth:" + getBirthDate();}

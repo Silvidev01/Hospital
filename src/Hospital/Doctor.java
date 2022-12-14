@@ -41,7 +41,7 @@ public class Doctor extends Person implements Iattend {
         return specialty;
     }
     @Override
-    public String showperson() {
+    public String showPerson() {
         return getName();
     }
 

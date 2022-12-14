@@ -1,5 +1,6 @@
 package Hospital;
 
+import Exceptions.PatientNotFoundException;
 import Interfaces.Ishowpatient;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class Main {
 
         EmployeeSave EmployeeSave = new EmployeeSave();
 
+
         //initializing employees
         Employee maria;
         maria = new Employee ("Nurse",10020,"UTI",true);
@@ -24,6 +26,11 @@ public class Main {
         EmployeeSave.save(fernando);
         EmployeeSave.save(Juan);
         EmployeeSave.save(Lucas);
+
+        //initializing patients
+
+
+
 
 
         List<Employee> employees=EmployeeSave.findAll();

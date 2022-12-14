@@ -67,6 +67,6 @@ String name;
         return Objects.hash(getName(), getLastname());
     }
 
-    public abstract String showperson();
+    public abstract String showPerson();
 }
 
