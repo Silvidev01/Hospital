@@ -1,10 +1,8 @@
 package Hospital;
 
-import Exceptions.PatientNotFoundException;
-import Interfaces.Ishowpatient;
-
-import java.util.List;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 
 public class Main {
 
@@ -12,16 +10,7 @@ public class Main {
 
     public static void main (String [] args){
 
-
-        EmployeeSave EmployeeSave = null;
-        try {
-            EmployeeSave = new EmployeeSave();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-        }
-
-
+        ArrayList<Employee> employees = new ArrayList<>();
         //initializing employees
         Employee maria;
         maria = new Employee ("Nurse",10020,"UTI",true);
@@ -29,22 +18,28 @@ public class Main {
         Employee Juan= new Employee("Receptionist", 10120,"Clinic",true);
         Employee Lucas = new Employee("Nurse", 10500, "Clinic",false);
 
-        EmployeeSave.save(maria);
-        EmployeeSave.save(fernando);
-        EmployeeSave.save(Juan);
-        EmployeeSave.save(Lucas);
+        employees.add(0,maria);
+        employees.add(1,fernando);
+        employees.add(2,Juan);
+        employees.add(3,Lucas);
 
-        //initializing patients
+    // Print list of employees
 
-
-
-
-
-        List<Employee> employees=EmployeeSave.findAll();
-        System.out.println(employees);
+       System.out.println(Collections.unmodifiableList(employees));
 
 
+        //Create a linked list empty for patients
 
+       LinkedList<String> plist = new LinkedList<>();
+        //Add patients
 
+        plist.add(0, "Juan Gomez");
+        plist.add(1, "Maria Gonzalez");
+        plist.add(2,"Jorge Madera");
+        plist.add(3, "Gustavo Luna");
+        plist.add(4,"Daiana Machado");
+
+        //Print list of patients
+        System.out.println(plist);
     }
 }
