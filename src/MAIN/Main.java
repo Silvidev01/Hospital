@@ -1,42 +1,39 @@
 package MAIN;
 
+import Exceptions.EmployeeNotFound;
+import FileReader_Countwords.FileReader;
 import Hospital.Employee;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.function.Predicate;
-import java.util.logging.Logger;
 
 public class Main {
 
 
     public static void main(String[] args) {
 
-
-
-
+        final Logger LOGGER = LogManager.getLogger(Main.class);
 
         ArrayList<Employee> employees = new ArrayList<>();
 
         //initializing employees
-
-
-            Employee em1;
+         Employee em1;
             em1 = new Employee("Maria", "Fernandez", "Nurse", 10020, "UTI", true);
             Employee em2 = new Employee("Fernando", "Lopez", "Doctor", 10150, "Clinic", true);
             Employee em3 = new Employee("Juan", "Rodriguez", "Receptionist", 10120, "Clinic", true);
             Employee em4 = new Employee("Lucas", "Arteaga", "Nurse", 10500, "Clinic", false);
 
-            employees.add(0, em1);
+         employees.add(0, em1);
             employees.add(1, em2);
             employees.add(2, em3);
             employees.add(3, em4);
-
-
         // Print list of employees
 
-        System.out.println(Collections.unmodifiableList(employees));
+        System.out.println(employees);
 
 
         //Create a linked list empty for patients

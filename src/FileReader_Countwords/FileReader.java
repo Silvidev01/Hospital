@@ -16,7 +16,7 @@ public class FileReader {
 
 
 
-    public static void countwords(File newfile) throws IOException {
+    public static void countWords(File newfile) throws IOException {
         int i = 0;
         String[] wordsarray = new String[0];
         try {
@@ -36,10 +36,9 @@ public class FileReader {
             br.close();
         } catch (FileNotFoundException e) {
             LOGGER.error(e);
-            ;
+
         } catch (IOException e) {
             LOGGER.error(e);
-            ;
         }
 
         HashMap<String, Integer> ocurrencyMap = new HashMap<>();
