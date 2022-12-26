@@ -6,8 +6,8 @@ import java.util.Objects;
 //this is an abstract class Person//
 abstract class Person {
 //Fields //
-String name;
-    String lastname;
+    protected String name;
+    protected String lastname;
     private String address;
 
     private LocalDate birthDate;
@@ -16,15 +16,18 @@ String name;
 
     public Person() {}
 
-    public Person(String name, String lastname, String address, LocalDate birthDate) {
+    public Person (String name, String lastname, String address, LocalDate birthDate) {
         this.name = name;
         this.lastname = lastname;
         this.address = address;
         this.birthDate = birthDate;
     }
 
+    public Person(String name, String lastname) {
+    }
 
-//getters and setters//
+
+    //getters and setters//
     public String getName() {
         return name;
     }
@@ -67,6 +70,15 @@ String name;
         return Objects.hash(getName(), getLastname());
     }
 
-    public abstract String showPerson();
-}
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                '}';
+    }
 
+    public abstract String showPerson();
+    public abstract String showPersonLastname();
+
+}

@@ -14,7 +14,7 @@ public class Patient extends Person {
     public Patient(){};
 
      public Patient(String name, String lastname, String address, LocalDate birthDate, int medicalrecordID, String medicalinsurance) {
-        super(name, lastname, address, birthDate);
+        super(name, lastname);
         this.medicalrecordID = medicalrecordID;
         this.medicalinsurance = medicalinsurance;
     }
@@ -43,11 +43,17 @@ public class Patient extends Person {
     public String showPerson() {
         return getName();
     }
+
+    @Override
+    public String showPersonLastname() {
+        return getLastname();
+    }
+
     public void showPatientMeIn() {
         out.println("The patient  "+ getName() + "has" + getMedicalinsurance() + "medical insurance");
     }
     public String getPatient(){
-        String fullname = name + "  " + lastname;
+        String fullname = getName() + "  " + lastname;
         return fullname;
     }
 

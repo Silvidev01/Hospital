@@ -1,6 +1,5 @@
 package Hospital;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class Employee extends Person {
@@ -11,17 +10,12 @@ public class Employee extends Person {
     private boolean status;
 
 //constructors
-    public Employee(String title, int employeeID, String sector, boolean estado) {
-        this.title = title;
-        this.employeeID = employeeID;
-        this.sector = sector;
-        this.status = estado;
-    }
-
-    public Employee(String name, String lastname, String address, LocalDate birthDate) {
-        super(name, lastname, address, birthDate);
-        this.name=name;
-        this.lastname=lastname;
+   public Employee(String name, String lastname, String title, int employeeID, String sector, boolean status) {
+       super(name,lastname);
+       this.title = title;
+       this.employeeID = employeeID;
+       this.sector = sector;
+       this.status = status;;
     }
 
     @Override
@@ -45,11 +39,11 @@ public class Employee extends Person {
         this.employeeID = employeeID;
     }
 
-    public boolean isEstado() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(boolean status) {
         this.status = status;
     }
 
@@ -63,12 +57,15 @@ public class Employee extends Person {
 
     @Override
     public String showPerson() {
-        return getName();
+        return name;
     }
-
+    @Override
+    public String showPersonLastname() {
+        return lastname;
+    }
     @Override
     public String toString() {
-        return "Employee:" + "\nname" + getName() + "lastname" + getLastname() +
+        return "Employee:" + "\n" + getName() +" " + getLastname()  +
                 "   " + title + ",  employeeID:" + employeeID +
                 ",  sector: " + sector + "\nActive:" + status + "\n";
     }

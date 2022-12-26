@@ -17,7 +17,7 @@ public class Doctor extends Person implements Iattend {
     }
 
     public Doctor(String name, String lastname, String address, LocalDate birthDate, String specialty, int doctorID) {
-        super(name, lastname, address, birthDate);
+        super(name, lastname);
         this.specialty = specialty;
         this.doctorID = doctorID;
     }
@@ -43,6 +43,11 @@ public class Doctor extends Person implements Iattend {
     @Override
     public String showPerson() {
         return getName();
+    }
+
+    @Override
+    public String showPersonLastname() {
+        return getLastname();
     }
 
     public void showdoctor() {
