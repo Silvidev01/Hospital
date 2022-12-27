@@ -11,7 +11,8 @@ public class Employee extends Person {
 
 //constructors
    public Employee(String name, String lastname, String title, int employeeID, String sector, boolean status) {
-       super(name,lastname);
+       super.setName(name);
+       super.setLastname(lastname);
        this.title = title;
        this.employeeID = employeeID;
        this.sector = sector;

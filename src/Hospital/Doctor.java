@@ -21,7 +21,11 @@ public class Doctor extends Person implements Iattend {
         this.specialty = specialty;
         this.doctorID = doctorID;
     }
-
+    public Doctor(String name, String lastname, String specialty, int doctorID) {
+        super(name, lastname);
+        this.specialty = specialty;
+        this.doctorID = doctorID;
+    }
     //setters and getters
 
     public String getSpecialty() {

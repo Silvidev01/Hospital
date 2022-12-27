@@ -1,7 +1,5 @@
 package Hospital;
 
-import java.time.LocalDate;
-
 import static java.lang.System.out;
 
 public class Patient extends Person {
@@ -13,7 +11,7 @@ public class Patient extends Person {
 
     public Patient(){};
 
-     public Patient(String name, String lastname, String address, LocalDate birthDate, int medicalrecordID, String medicalinsurance) {
+     public Patient(String name, String lastname, int medicalrecordID, String medicalinsurance) {
         super(name, lastname);
         this.medicalrecordID = medicalrecordID;
         this.medicalinsurance = medicalinsurance;
