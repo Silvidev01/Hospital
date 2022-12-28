@@ -3,6 +3,8 @@ package Hospital;
 import Interfaces.Iattend;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.System.out;
 
@@ -11,6 +13,7 @@ public class Doctor extends Person implements Iattend {
     //fields
     private String specialty;
     private int doctorID;
+
 
     //constructors
     public Doctor() {
@@ -54,13 +57,17 @@ public class Doctor extends Person implements Iattend {
         return getLastname();
     }
 
+    private List<Doctor> doctors = new ArrayList<Doctor>();
+    public List<Doctor> getDoctors() {
+        return doctors;
+    }
     public void showdoctor() {
         out.println("Doctor"+ getName() + getLastname() + "is from" + getSpecialty());
     }
 
     @Override
-    public void attendPatient(Patient patient) {
+    public void attendPatient(Patient patient ) {
 
-        System.out.println("You have an appointment with doctor" + getName() );
+        out.println("You have an appointment with doctor" + getName() );
     }
 }

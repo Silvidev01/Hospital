@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class Receptionist extends Person implements IAppointment {
     private static Logger LOGGER = LogManager.getLogger(Receptionist.class);
@@ -40,8 +41,6 @@ public class Receptionist extends Person implements IAppointment {
         Appointment appointment = new Appointment(date, time, doctor, patient, cost);
         LOGGER.info("Appointment registered successfully");
         return appointment;
-
-
     }
 
     @Override
